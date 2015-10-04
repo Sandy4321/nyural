@@ -1,0 +1,3 @@
+- Need to add test routine
+- Changes on the optimizer code(it is copy from matlab, so need to transcode to python)
+- Add arg for changing logging paths
