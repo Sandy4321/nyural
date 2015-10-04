@@ -5,6 +5,7 @@ This is WIP, moving the code from matlab to python & pycuda.
 Scaffolding based on [Caffe](https://github.com/BVLC/caffe) from Berkeley Vision and Learning Center(BVLC).
 
 How to Use:
+make
 ~/pathto/nyural.py train/test -solver (pathtosolver)
 
 Similar frameworks:
