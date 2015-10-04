@@ -13,7 +13,7 @@ make
 Similar frameworks:
 [hessianfree](https://github.com/drasmuss/hessianfree) 
 
-Waseda University - Laboratory for Intelligent Dynamics and Representation.
+Laboratory for Intelligent Dynamics and Representation.
 
 Copyright (C) 2015 [Yalta Nelson](nyalta21@gmail.com)
 Copyright (C) 2013 Kuniaki Noda 
