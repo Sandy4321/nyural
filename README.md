@@ -1,8 +1,11 @@
 # Nyural
-Deep Neural Network Trainer based on Hessian free Optimizer
+Deep Neural Network Trainer based on Hessian-free Optimization
 
 This is WIP, moving the code from matlab to python & pycuda.
 Scaffolding based on [Caffe](https://github.com/BVLC/caffe) from Berkeley Vision and Learning Center(BVLC).
+
+How to Use:
+~/pathto/nyural.py train/test -solver (pathtosolver)
 
 Similar frameworks:
 [hessianfree](https://github.com/drasmuss/hessianfree) 
