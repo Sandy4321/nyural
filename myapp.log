@@ -1,0 +1,2640 @@
+2015-10-07 12:56:53,766 [INFO] Begining the training
+2015-10-07 12:56:53,766 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 12:56:53,798 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 1
+2015-10-07 12:56:53,798 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 12:56:53,933 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 13:00:16,913 [INFO] Begining the training
+2015-10-07 13:00:16,913 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 13:00:16,921 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 13:00:16,934 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 13:00:17,065 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 13:00:17,469 [INFO] Loading Files
+2015-10-07 13:07:55,628 [INFO] Begining the training
+2015-10-07 13:07:55,628 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 13:07:55,632 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 13:07:55,637 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 13:07:55,663 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 13:07:55,990 [INFO] Loading Files
+2015-10-07 16:24:57,161 [INFO] Begining the training
+2015-10-07 16:24:57,161 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:24:57,177 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:24:57,177 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:24:57,193 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:24:57,525 [INFO] Loading Files
+2015-10-07 16:30:43,658 [INFO] Begining the training
+2015-10-07 16:30:43,658 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:30:43,674 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:30:43,674 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:30:43,674 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:30:43,923 [INFO] Loading Files
+2015-10-07 16:31:10,690 [INFO] Begining the training
+2015-10-07 16:31:10,690 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:31:10,706 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:31:10,706 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:31:10,720 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:31:10,956 [INFO] Loading Files
+2015-10-07 16:35:10,236 [INFO] Begining the training
+2015-10-07 16:35:10,236 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:35:10,236 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:35:10,236 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:35:10,278 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:35:10,517 [INFO] Loading Files
+2015-10-07 16:36:39,171 [INFO] Begining the training
+2015-10-07 16:36:39,171 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:36:39,171 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:36:39,171 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:36:39,187 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:36:39,434 [INFO] Loading Files
+2015-10-07 16:38:38,319 [INFO] Begining the training
+2015-10-07 16:38:38,319 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:38:38,319 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:38:38,319 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:38:38,335 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:38:38,585 [INFO] Loading Files
+2015-10-07 16:38:54,770 [INFO] Begining the training
+2015-10-07 16:38:54,770 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:38:54,770 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:38:54,786 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:38:54,786 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:38:55,039 [INFO] Loading Files
+2015-10-07 16:41:58,359 [INFO] Begining the training
+2015-10-07 16:41:58,359 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:41:58,359 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:41:58,359 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:41:58,375 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:41:58,609 [INFO] Loading Files
+2015-10-07 16:42:53,653 [INFO] Begining the training
+2015-10-07 16:42:53,653 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:42:53,653 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:42:53,668 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:42:53,668 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:42:53,911 [INFO] Loading Files
+2015-10-07 16:44:25,492 [INFO] Begining the training
+2015-10-07 16:44:25,492 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:44:25,492 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:44:25,492 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:44:25,513 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:44:25,749 [INFO] Loading Files
+2015-10-07 16:48:05,796 [INFO] Begining the training
+2015-10-07 16:48:05,798 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:48:05,802 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:48:05,803 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:48:05,813 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:48:06,062 [INFO] Loading Files
+2015-10-07 16:48:57,834 [INFO] Begining the training
+2015-10-07 16:48:57,834 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:48:57,838 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:48:57,838 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:48:57,849 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:48:58,095 [INFO] Loading Files
+2015-10-07 16:49:18,983 [INFO] Begining the training
+2015-10-07 16:49:18,983 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:49:18,986 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:49:18,989 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:49:18,996 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:49:19,244 [INFO] Loading Files
+2015-10-07 16:49:54,615 [INFO] Begining the training
+2015-10-07 16:49:54,617 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:49:54,621 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:49:54,622 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:49:54,637 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:49:54,892 [INFO] Loading Files
+2015-10-07 16:55:10,709 [INFO] Begining the training
+2015-10-07 16:55:10,709 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:55:10,713 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:55:10,713 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:55:10,724 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:55:10,973 [INFO] Loading Files
+2015-10-07 16:58:54,575 [INFO] Begining the training
+2015-10-07 16:58:54,575 [INFO] Reading Solver From:examples\mnist\solver.proto
+2015-10-07 16:58:54,579 [INFO] Setting Solver Parameters
+run_desc: Test on the MNIST (digit classification) dataset
+run_name: mnist_net
+max epoch: 10
+decay: 0.95
+weightcost: 2e-06
+autodamp: 1
+drop: 0.66666669
+boost: 1.5
+rms: 0
+errtype: L2
+initlambda: 45
+mattype: gn
+hibrid: 1
+snapshot_name: mnist
+gpu: 0
+2015-10-07 16:58:54,582 [INFO] Training Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:58:54,592 [INFO] Testing Network:
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "indata"
+  top: "relu1"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  bottom: "relu1"
+  top: "relu2"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  bottom: "relu2"
+  top: "relu3"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  bottom: "relu3"
+  top: "relu4"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  bottom: "relu4"
+  bottom: "outdata"
+  top: "loss"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}
+
+2015-10-07 16:58:54,838 [INFO] Loading Files

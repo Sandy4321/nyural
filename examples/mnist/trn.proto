@@ -1,0 +1,70 @@
+name: "mnist"
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TRAIN 
+  hdf5_data_param {
+    source: "examples/mnist/train.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "Indata"
+  type: "Data"
+  top: "indata"
+  top: "outdata"
+  phase: TEST 
+  hdf5_data_param {
+    source: "examples/mnist/test.h5"
+    batch_size: 7500
+  }
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  top: "relu1"
+  bottom: "indata"
+  relu_param {
+    num_output: 1024
+  }
+}
+layer {
+  name: "relu2"
+  type: "ReLU"
+  top: "relu2"
+  bottom: "relu1"
+  relu_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "relu3"
+  type: "ReLU"
+  top: "relu3"
+  bottom: "relu2"
+  relu_param {
+    num_output: 256
+  }
+}
+layer {
+  name: "relu4"
+  type: "ReLU"
+  top: "relu4"
+  bottom: "relu3"
+  relu_param {
+    num_output: 32
+  }
+}
+layer {
+  name: "loss"
+  type: "Softmax"
+  top: "loss"
+  bottom: "relu4"
+  bottom: "outdata"
+  softmax_param {
+    num_output: 10
+    error_type: "mse"
+  }
+}

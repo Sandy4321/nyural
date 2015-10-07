@@ -9,12 +9,8 @@ message TensorShape {
 message SolverParameter {
   optional string net = 1;
   optional int32 max_iter = 2;
-  optional int32 data_size = 3 [default = 400000]; //move to HDF5param or MATparam as batch
   optional int32 gpu = 4 [default = 0];
-  optional string source_train = 5; //move to HDF5param or MATparam
-  optional string source_test = 6; //move to HDF5param or MATparam
-  optional string transform_file = 7; // move to Transfrom param
-  optional int32 mean_value = 8; //move to Transfrom param
+
   optional string snapshot_name = 9;
   optional int32 seed = 10; //set the seed of the random, by default 1234
 
@@ -22,7 +18,7 @@ message SolverParameter {
   optional string run_name = 21;
   optional NetParameter trn_net_param = 22;
 
-  optional int32 numchunks = 24 [default = 20]; // move to input Layer data....(HDF5...)
+  optional int32 num_chunks = 24 [default = 20]; // move to input Layer data....(HDF5...)
   optional float decay = 25 [default = 0.95];
 
   optional float weightcost = 26 [default = 0.000002];
@@ -52,11 +48,31 @@ message NetParameter {
   repeated LayerParameter layer = 100;  // ID 100 so layers are printed last.
 }
 
+message NetStateRule {
+  // Set phase to require the NetState have a particular phase (TRAIN or TEST)
+  // to meet this rule.
+  optional Phase phase = 1;
+
+  // Set the minimum and/or maximum levels in which the layer should be used.
+  // Leave undefined to meet the rule regardless of level.
+  optional int32 min_level = 2;
+  optional int32 max_level = 3;
+
+  // Customizable sets of stages to include or exclude.
+  // The net must have ALL of the specified stages and NONE of the specified
+  // "not_stage"s to meet the rule.
+  // (Use multiple NetStateRules to specify conjunctions of stages.)
+  repeated string stage = 4;
+  repeated string not_stage = 5;
+}
+
 message LayerParameter {
   optional string name = 1; // the layer name
   optional string type = 2; // the layer type
   repeated string bottom = 3; // the name of each bottom blob
   repeated string top = 4; // the name of each top blob
+  repeated NetStateRule include = 8;
+
   optional Phase phase = 10;
 
   optional TransformationParameter transform_param = 100;
@@ -64,11 +80,14 @@ message LayerParameter {
   optional AccuracyParameter accuracy_param = 102;
   optional ConcatParameter concat_param = 104;
   optional ConvolutionParameter convolution_param = 106;
+  optional DataParameter data_param = 107;
   optional EltwiseParameter eltwise_param = 110;
   optional HDF5DataParameter hdf5_data_param = 112;
   optional PoolingParameter pooling_param = 121;
   optional PowerParameter power_param = 122;
+  optional ReLUParameter relu_param = 123;
   optional SigmoidParameter sigmoid_param = 124;
+  optional SoftmaxParameter softmax_param = 125;
   optional TanHParameter tanh_param = 127;
   optional LinearParameter linear_param = 130;
   optional MATDataParameter mat_data_param = 131;
@@ -110,12 +129,18 @@ message ConcatParameter {
   optional int32 axis = 2 [default = 1];
 }
 
+message DataParameter {
+
+  // Specify the data source.
+  optional string source = 1;
+  // Specify the batch size.
+  optional uint32 batch_size = 4;
+}
 message HDF5DataParameter {
   // Specify the data source.
   optional string source = 1;
   // Specify the batch size.
   optional uint32 batch_size = 2;
-  optional uint32 num_chunks = 3;
 }
 
 message MATDataParameter {
@@ -186,9 +211,30 @@ message PowerParameter {
   optional float shift = 3 [default = 0.0];
 }
 
+message ReLUParameter {
+  // Allow non-zero slope for negative inputs to speed up optimization
+  // Described in:
+  // Maas, A. L., Hannun, A. Y., & Ng, A. Y. (2013). Rectifier nonlinearities
+  // improve neural network acoustic models. In ICML Workshop on Deep Learning
+  // for Audio, Speech, and Language Processing.
+  //optional float negative_slope = 1 [default = 0];
+  optional uint32 num_output = 1; // The number of outputs for the layer
+}
+
 message SigmoidParameter {
   optional uint32 num_output = 1; // The number of outputs for the layer
 }
+
+// Message that stores parameters used by SoftmaxLayer, SoftmaxWithLossLayer
+message SoftmaxParameter {
+  optional uint32 num_output = 1; // The number of outputs for the layer  
+  // The axis along which to perform the softmax -- may be negative to index
+  // from the end (e.g., -1 for the last axis).
+  // Any other axes will be evaluated as independent softmaxes.
+  optional int32 axis = 2 [default = 1];
+  optional string error_type = 3;
+}
+
 
 message TanHParameter {
   optional uint32 num_output = 1; // The number of outputs for the layer

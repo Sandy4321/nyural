@@ -1,0 +1,8 @@
+net: "examples/mnist/trn.proto"
+max_iter: 10
+run_desc: "Test on the MNIST (digit classification) dataset"
+run_name: "mnist_net"
+gpu: 0
+
+snapshot_name: "mnist"
+num_chunks: 20
